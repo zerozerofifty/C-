@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <array>
+#include <vector>
+
+int main() {
+
+    using std::cout;
+    using std::cin;
+    using std::array;
+    using std::string;
+    using std::vector;
+
+    
+    array<float,3> wyniki;
+    
+    cout<<"Podaj pierwszy wynik: "; cin>>wyniki[0];
+    cout<<"Podaj drugi wynik: "; cin>>wyniki[1];
+    cout<<"Podaj trzeci wynik: "; cin>>wyniki[2];
+    
+    cout<<"Średni wynik = "<<(wyniki[0]+wyniki[1]+wyniki[2])/3<<"\n";
+    
+    
+    
+    struct towar {
+        string nazwa_producenta;
+        float waga;
+        short srednica;
+    };
+    
+    towar *pizza = new towar;
+    
+    cout<<"Podaj średnicę pizzy: "; cin>>(*pizza).srednica;cin.get();
+    cout<<"Podaj nazwę producenta: "; getline(cin,(*pizza).nazwa_producenta);
+    cout<<"Podaj wagę: "; cin>>((*pizza).waga);
+    
+    cout<<"Nazwa producenta: "<<(*pizza).nazwa_producenta<<"; Waga: "<<(*pizza).waga<<" gr.; Średnica: "<<(*pizza).srednica<<" cm.\n";
+    
+    delete pizza;
+    
+    return 0;
